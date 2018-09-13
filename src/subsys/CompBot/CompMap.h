@@ -66,7 +66,12 @@ namespace Team302
 	// Drive Encoder conversion rates to convert from counts to feet and feet per second
 	//==========================================================================================
 //	const float ENCODER_DISTANCE_CONVERSION = 0.0023271056693257; // encoder counts to feet //Comp Bot
-	const float ENCODER_DISTANCE_CONVERSION = 0.0019023912023129; //comp bot 4-12
+	const float ENCODER_DISTANCE_CONVERSION = 0.0038047824046258; //comp bot 4-12 * 2
+//	const float ENCODER_DISTANCE_CONVERSION = 0.0019023912023129; //comp bot 4-12
+//	const float ENCODER_DISTANCE_CONVERSION = 0.0016622183352327; //comp bot 5-20 (note ratio would be .00232710567)
+//	const float ENCODER_DISTANCE_CONVERSION = 0.00083110916761635;
+
+  
 //	const float ENCODER_DISTANCE_CONVERSION = 0.0024375380865326; //Eighty Bot
 	const float ENCODER_VELOCITY_CONVERSION = 0.0232710566932577; // encoder counts per 0.1 sec to feet per second
 	const float DEGREES_PER_PULSE = (90.0/(1150.0 * 1.0)); //(90.0/(1350.0 * 1.0)) (90.0/(1323.0 * 4.0))  90 degrees divided by delta counts (left - right) from calibrated turn times for to convert to quad encoding. degrees/(counts * encoding)

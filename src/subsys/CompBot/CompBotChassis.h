@@ -56,7 +56,8 @@ public:
 
 
 private:
-	int TALON_CURRENT_LIMIT = 60;
+
+   int TALON_CURRENT_LIMIT = 50;
 };
 
 } /* namespace Team302 */

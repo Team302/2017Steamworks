@@ -34,6 +34,7 @@ void ArcadeDrive::DriveWithJoysticks() const
     rightSpeed += leftNudge ? NUDGE_AMOUNT : 0;
 
     // Check current limiting buttons, Y: enable, A: disable
+    /*
     if (DragonXbox::GetDriver()->GetButton(DragonXbox::Y_BUTTON))
 	{
     	m_chassis->EnableCurrentLimiting();
@@ -42,6 +43,8 @@ void ArcadeDrive::DriveWithJoysticks() const
 	{
     	m_chassis->DisableCurrentLimiting();
 	}
+	*/
+
 
     // Set the motors
     m_chassis->SetLeftPower( leftSpeed );

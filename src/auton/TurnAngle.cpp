@@ -31,7 +31,7 @@ void TurnAngle::Init(PrimitiveParams* params)
     m_chassis->ResetDistance();
     m_targetAngle = params->GetAngle();
     m_speedMultiplier = std::abs(params->GetDriveSpeed() / 75.0); // TODO: 75 should be a constant //get target rotation speed from primitives
-    float deltaAngle = m_targetAngle - m_gyro->GetRawAngle();  // JW - renamed not a member attribute
+//    float deltaAngle = m_targetAngle - m_gyro->GetRawAngle();  // JW - renamed not a member attribute
 
     // JW - At this point, this code doesn't do anything to optimize the turn angle (e.g. it always
     //      turns right or turns left based on the delta angle && speed combo

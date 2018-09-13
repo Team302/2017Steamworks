@@ -16,28 +16,24 @@ namespace Team302 {
 
 float CompBotChassis::GetLeftDistance() const
 {
-	float leftPos = m_leftMasterMotor->GetEncPosition();
-	//value is negated to flip left side because invertSensor doesn't change that. Right side is fine as is TODO: BAD eric. put invert constant in a if statement
-	return - ((leftPos) * ENCODER_DISTANCE_CONVERSION );
-	//	return GetRightDistance();
+	return GetRightDistance();
 }
 
 float CompBotChassis::GetRightDistance() const
 {
 	float rightPos = m_rightMasterMotor->GetEncPosition();
+	frc::SmartDashboard::PutNumber("encoder distance conversion", ENCODER_DISTANCE_CONVERSION);
 	return ((rightPos) * ENCODER_DISTANCE_CONVERSION );
 }
 
 float CompBotChassis::GetLeftBackDistance() const
 {
-	return GetLeftDistance();
-	//	return GetRightDistance();
+	return GetRightBackDistance();
 }
 
 float CompBotChassis::GetLeftFrontDistance() const
 {
-	return GetLeftDistance();
-	//	return GetRightDistance();
+	return GetRightFrontDistance();
 }
 
 float CompBotChassis::GetRightBackDistance() const
@@ -53,10 +49,8 @@ float CompBotChassis::GetRightFrontDistance() const
 
 float CompBotChassis::GetLeftVelocity() const
 {
-	float leftMotorVel = m_leftMasterMotor->GetEncVel();
-	//value is negated to flip left side because invertSensor doesn't change that. Right side is fine as is
-	return - ((leftMotorVel) * ENCODER_VELOCITY_CONVERSION );
-	//	return GetRightVelocity();
+
+  return GetRightVelocity();
 }
 
 float CompBotChassis::GetRightVelocity() const
@@ -67,14 +61,12 @@ float CompBotChassis::GetRightVelocity() const
 
 float CompBotChassis::GetLeftBackVelocity() const
 {
-	return GetLeftVelocity();
-	//	return GetRightVelocity();
+	return GetRightBackVelocity();
 }
 
 float CompBotChassis::GetLeftFrontVelocity() const
 {
-	return GetLeftVelocity();
-	//	return GetRightVelocity();
+	return GetRightFrontVelocity();
 }
 
 float CompBotChassis::GetRightBackVelocity() const
@@ -274,6 +266,9 @@ CompBotChassis::CompBotChassis():
 	m_rightSlaveMotor->SetControlMode(DragonTalon::FOLLOWER); //sets the front right to follow output of the master
 	m_rightSlaveMotor->Set(RIGHT_BACK_DRIVE_MOTOR); //specifies that the right slave will follow master
 	m_rightSlaveMotor->SetInverted (IS_RIGHT_FRONT_DRIVE_MOTOR_INVERTED);
+
+	SetCurrentLimit( TALON_CURRENT_LIMIT );
+	EnableCurrentLimiting();
 
 	//	//Enable current limit
 	//	m_leftMasterMotor->EnableCurrentLimit(true);
