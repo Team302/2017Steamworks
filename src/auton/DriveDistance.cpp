@@ -52,6 +52,7 @@ bool DriveDistance::IsDone() //Getter: gets m_done
     frc::SmartDashboard::PutNumber( "Right Distance", m_chassis->GetRightBackDistance());
 //    frc::SmartDashboard::PutNumber( "Left Distance", m_chassis->GetLeftBackDistance());
     frc::SmartDashboard::PutNumber("target", m_targetDistance);
+
 //    bool reachedTarget = std::abs(currentDistance) > ((std::abs(m_targetDistance) - (COMPENSATE_SCALE * std::abs(m_chassis->GetRightBackVelocity()) * IPrimitive::LOOP_LENGTH)));
     bool reachedTarget = std::abs(currentDistance) > (std::abs(m_targetDistance));
 //    SmartDashboard::PutBoolean("ReachedTarget" , reachedTarget);
@@ -60,6 +61,8 @@ bool DriveDistance::IsDone() //Getter: gets m_done
 //    		 PrimitiveFactory::GetInstance()->GetFuelPrim()->IsDone() );//  return std::abs(currentDistance) > ((std::abs(m_targetDistance) + (COMPENSATE_SCALE * std::abs(m_chassis->GetRightBackVelocity()) * IPrimitive::LOOP_LENGTH)));
 
 //    reachedTarget = reachedTarget || m_timeRemaining < (IPrimitive::LOOP_LENGTH / 2.0);
+
+  
 
     m_timeRemaining -= IPrimitive::LOOP_LENGTH;
     return reachedTarget;

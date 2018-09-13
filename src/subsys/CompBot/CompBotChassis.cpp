@@ -49,7 +49,8 @@ float CompBotChassis::GetRightFrontDistance() const
 
 float CompBotChassis::GetLeftVelocity() const
 {
-	return GetRightVelocity();
+
+  return GetRightVelocity();
 }
 
 float CompBotChassis::GetRightVelocity() const
@@ -65,7 +66,7 @@ float CompBotChassis::GetLeftBackVelocity() const
 
 float CompBotChassis::GetLeftFrontVelocity() const
 {
-	return GetRightFrontVelocity();;
+	return GetRightFrontVelocity();
 }
 
 float CompBotChassis::GetRightBackVelocity() const

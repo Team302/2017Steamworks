@@ -45,6 +45,7 @@ void ArcadeDrive::DriveWithJoysticks() const
 	}
 	*/
 
+
     // Set the motors
     m_chassis->SetLeftPower( leftSpeed );
     m_chassis->SetRightPower( rightSpeed );
